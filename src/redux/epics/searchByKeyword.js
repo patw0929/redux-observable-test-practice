@@ -10,7 +10,7 @@ import {
 } from 'rxjs/operators';
 import { SEARCH_KEYWORD, searchSuccess, searchFail } from '../modules/searchByKeyword';
 
-const fetchAPI = (getJSON, action) => (
+const fetchAPI$ = (getJSON, action) => (
   getJSON(`https://api.github.com/search/repositories?q=${action.keyword}&sort=stars&order=desc`)
     .pipe(
       map(response =>
@@ -38,7 +38,7 @@ export const getSearchResultEpic = (action$, store, { getJSON }) => {
     distinctUntilChanged(),
     filter(action => action.keyword.length),
     switchMap(action =>
-      fetchAPI(getJSON, action)
+      fetchAPI$(getJSON, action)
     )
   );
 };
