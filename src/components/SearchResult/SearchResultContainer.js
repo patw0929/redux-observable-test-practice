@@ -6,14 +6,16 @@ const mapStateToProps = state => {
 
   if (!state.searchByKeyword.keyword) {
     return {
-      isFetching: false,
+      isFetching,
       items: [],
+      error: null,
     };
   }
 
   return {
     isFetching,
     items: state.searchByKeyword.keywords[state.searchByKeyword.keyword].items,
+    error: state.searchByKeyword.error,
   };
 };
 
