@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import SearchBox from './SearchBox';
-import { search } from '../redux/modules/searchByKeyword';
+import { search } from '../../redux/modules/searchByKeyword';
 
 const mapDispatchToProps = dispatch => {
   return {
