@@ -1,7 +1,7 @@
 import React from 'react';
 import DebounceInput from '../../hoc/DebounceInput';
 
-const SearchBox = ({ onChange, props$ }) => (
+const SearchBox = ({ props$ }) => (
   <div className="form-group">
     <label htmlFor="search-input">
       Search GitHub repos:
