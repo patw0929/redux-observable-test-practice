@@ -11,7 +11,7 @@ import {
 } from 'rxjs/operators';
 import { SEARCH_KEYWORD, searchSuccess, searchFail } from '../modules/searchByKeyword';
 
-export const getPostsEpic = action$ => {
+export const getSearchResultEpic = action$ => {
   return action$.pipe(
     ofType(SEARCH_KEYWORD),
     debounceTime(300),

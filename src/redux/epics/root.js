@@ -1,6 +1,6 @@
 import { combineEpics } from 'redux-observable';
-import { getPostsEpic } from '../epics/searchByKeyword';
+import { getSearchResultEpic } from '../epics/searchByKeyword';
 
 export const rootEpic = combineEpics(
-  getPostsEpic
+  getSearchResultEpic
 );
