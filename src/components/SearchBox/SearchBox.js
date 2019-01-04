@@ -1,39 +1,22 @@
-import React, { Component } from 'react';
-import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import React from 'react';
+import DebounceInput from '../../hoc/DebounceInput';
 
-class SearchBox extends Component {
-  constructor(props) {
-    super(props);
+const SearchBox = ({ onChange, props$ }) => (
+  <div className="form-group">
+    <label htmlFor="search-input">
+      Search GitHub repos:
+    </label>
 
-    this.onChange$ = new Subject();
-    this.onChange$.pipe(
-      debounceTime(300),
-      distinctUntilChanged()
-    ).subscribe(val => props.onChange(val));
-  }
+    <input
+      type="text"
+      id="search-input"
+      className="form-control"
+      onChange={e => props$.next(e.target.value)}
+      placeholder="Search"
+    />
+  </div>
+);
 
-  componentWillUnmount() {
-    this.onChange$.unsubscribe();
-  }
-
-  render() {
-    return (
-      <div className="form-group">
-        <label htmlFor="search-input">
-          Search GitHub repos:
-        </label>
-
-        <input
-          type="text"
-          id="search-input"
-          className="form-control"
-          onChange={e => this.onChange$.next(e.target.value)}
-          placeholder="Search"
-        />
-      </div>
-    );
-  }
-}
-
-export default SearchBox;
+export default DebounceInput(
+  SearchBox
+);
