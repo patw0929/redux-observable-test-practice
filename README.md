@@ -1,6 +1,8 @@
 redux-observable-test-practice
 ---
 
+[![Build Status](https://travis-ci.org/patw0929/redux-observable-test-practice.svg)](https://travis-ci.org/patw0929/redux-observable-test-practice)
+
 Try to use marble testing to test epic.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
