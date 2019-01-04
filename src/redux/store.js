@@ -1,15 +1,20 @@
-import { createStore } from 'redux';
-import { rootReducer } from './modules/root';
+import { createEpicMiddleware } from 'redux-observable';
+import { createStore, applyMiddleware } from 'redux';
+import { rootEpic, rootReducer } from './modules/root';
 
 const configureStore = initialState => {
   let store;
+  const epicMiddleware = createEpicMiddleware();
+  const enhancer = applyMiddleware(epicMiddleware);
+
+  epicMiddleware.run(rootEpic);
 
   if ('production' !== process.env.NODE_ENV) {
     const Reactotron = require('./reactotronConfig').default; // eslint-disable-line global-require
 
-    store = Reactotron.createStore(rootReducer, initialState);
+    store = Reactotron.createStore(rootReducer, initialState, enhancer);
   } else {
-    store = createStore(rootReducer, initialState);
+    store = createStore(rootReducer, initialState, enhancer);
   }
 
   if (module.hot) {
