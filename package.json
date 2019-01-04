@@ -2,6 +2,7 @@
   "name": "redux-observable-test-practice",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://patw0929.github.io/redux-observable-test-practice",
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
