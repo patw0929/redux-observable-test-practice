@@ -19,6 +19,13 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js}",
+      "!src/index.js",
+      "!src/serviceWorker.js"
+    ]
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -29,7 +36,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
     "gh-pages": "^2.0.1",
+    "react-test-renderer": "^16.7.0",
     "reactotron-react-js": "^2.1.4",
     "reactotron-redux": "^2.1.3"
   }
