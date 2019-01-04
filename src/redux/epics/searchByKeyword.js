@@ -23,7 +23,12 @@ export const getSearchResultEpic = action$ => {
           map(response =>
             searchSuccess({
               keyword: action.keyword,
-              items: response.items,
+              items: response.items.map(item => {
+                return {
+                  id: item.id,
+                  full_name: item.full_name,
+                };
+              }),
             })
           // ).takeUntil(
             // action$.ofType(actionTypes.ABORT_GET_POSTS)
