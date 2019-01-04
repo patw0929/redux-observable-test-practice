@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.478092f6.chunk.css",
-  "main.js": "/static/js/main.15db3d47.chunk.js",
-  "main.js.map": "/static/js/main.15db3d47.chunk.js.map",
-  "static/js/1.2baff268.chunk.js": "/static/js/1.2baff268.chunk.js",
-  "static/js/1.2baff268.chunk.js.map": "/static/js/1.2baff268.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/css/main.478092f6.chunk.css.map": "/static/css/main.478092f6.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.927cefd975d9a47f0e953964970ab027.js": "/precache-manifest.927cefd975d9a47f0e953964970ab027.js",
-  "service-worker.js": "/service-worker.js"
+  "main.css": "/redux-observable-test-practice/static/css/main.478092f6.chunk.css",
+  "main.js": "/redux-observable-test-practice/static/js/main.5b10c6b5.chunk.js",
+  "main.js.map": "/redux-observable-test-practice/static/js/main.5b10c6b5.chunk.js.map",
+  "static/js/1.2baff268.chunk.js": "/redux-observable-test-practice/static/js/1.2baff268.chunk.js",
+  "static/js/1.2baff268.chunk.js.map": "/redux-observable-test-practice/static/js/1.2baff268.chunk.js.map",
+  "runtime~main.js": "/redux-observable-test-practice/static/js/runtime~main.c7fd962d.js",
+  "runtime~main.js.map": "/redux-observable-test-practice/static/js/runtime~main.c7fd962d.js.map",
+  "static/css/main.478092f6.chunk.css.map": "/redux-observable-test-practice/static/css/main.478092f6.chunk.css.map",
+  "index.html": "/redux-observable-test-practice/index.html",
+  "precache-manifest.f935ef5bbf73900a3587d801b90ef4d8.js": "/redux-observable-test-practice/precache-manifest.f935ef5bbf73900a3587d801b90ef4d8.js",
+  "service-worker.js": "/redux-observable-test-practice/service-worker.js"
 }
