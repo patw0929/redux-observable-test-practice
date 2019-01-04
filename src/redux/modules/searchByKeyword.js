@@ -82,7 +82,7 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         isFetching: false,
-        error: action.error,
+        error: action.error.response.message,
       };
     }
 
