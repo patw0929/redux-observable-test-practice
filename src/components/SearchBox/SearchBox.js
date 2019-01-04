@@ -1,20 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
-const SearchBox = ({ value, onChange }) => (
-  <div className="form-group">
-    <label htmlFor="search-input">
-      Search GitHub repos:
-    </label>
+class SearchBox extends Component {
+  constructor(props) {
+    super(props);
 
-    <input
-      type="text"
-      id="search-input"
-      className="form-control"
-      value={value}
-      onChange={e => onChange.call(this, e.target.value)}
-      placeholder="Search"
-    />
-  </div>
-);
+    this.onChange$ = new Subject();
+    this.onChange$.pipe(
+      debounceTime(300),
+      distinctUntilChanged()
+    ).subscribe(val => props.onChange(val));
+  }
+
+  componentWillUnmount() {
+    this.onChange$.unsubscribe();
+  }
+
+  render() {
+    return (
+      <div className="form-group">
+        <label htmlFor="search-input">
+          Search GitHub repos:
+        </label>
+
+        <input
+          type="text"
+          id="search-input"
+          className="form-control"
+          onChange={e => this.onChange$.next(e.target.value)}
+          placeholder="Search"
+        />
+      </div>
+    );
+  }
+}
 
 export default SearchBox;
