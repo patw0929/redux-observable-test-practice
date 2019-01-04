@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage renders correct as snapshot 1`] = `"<div class=\\"alert alert-danger\\" role=\\"alert\\"><strong>Oops!</strong> Network error!</div>"`;

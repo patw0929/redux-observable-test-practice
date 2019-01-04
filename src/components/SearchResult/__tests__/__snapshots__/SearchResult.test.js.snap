@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResult renders correct as snapshot - with has error 1`] = `"<div class=\\"alert alert-danger\\" role=\\"alert\\"><strong>Oops!</strong> Network error!</div><ul class=\\"list-group\\"></ul>"`;
+
+exports[`SearchResult renders correct as snapshot - with has items 1`] = `"<ul class=\\"list-group\\"><li class=\\"list-group-item\\">react</li><li class=\\"list-group-item\\">redux</li></ul>"`;
+
+exports[`SearchResult renders correct as snapshot - with isFetching is true 1`] = `"<div class=\\"loader\\">Loading...</div>"`;
