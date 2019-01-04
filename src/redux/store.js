@@ -1,11 +1,16 @@
 import { createEpicMiddleware } from 'redux-observable';
 import { createStore, applyMiddleware } from 'redux';
+import { ajax } from 'rxjs/ajax';
 import { rootReducer } from './modules/root';
 import { rootEpic } from './epics/root';
 
 const configureStore = initialState => {
   let store;
-  const epicMiddleware = createEpicMiddleware();
+  const epicMiddleware = createEpicMiddleware({
+    dependencies: {
+      getJSON: ajax.getJSON,
+    },
+  });
   const enhancer = applyMiddleware(epicMiddleware);
 
   if ('production' !== process.env.NODE_ENV) {
