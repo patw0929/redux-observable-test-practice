@@ -2,14 +2,18 @@ import { connect } from 'react-redux';
 import SearchResult from './SearchResult';
 
 const mapStateToProps = state => {
-  if (!state.keyword) {
+  const isFetching = state.searchByKeyword.isFetching;
+
+  if (!state.searchByKeyword.keyword) {
     return {
+      isFetching: false,
       items: [],
     };
   }
 
   return {
-    items: state.searchByKeyword[state.keyword].items,
+    isFetching,
+    items: state.searchByKeyword.keywords[state.searchByKeyword.keyword].items,
   };
 };
 
